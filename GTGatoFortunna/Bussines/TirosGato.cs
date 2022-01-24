@@ -7,7 +7,7 @@ namespace GTGatoFortunna.Bussines
 {
     public class TirosGato
     {
-        public static Data.Result GetConfig()
+        public static Data.Result<dynamic> GetConfig()
         {
             try
             {
@@ -41,7 +41,7 @@ namespace GTGatoFortunna.Bussines
             }
         }
 
-        internal static Data.Result Save(Data.Cuenta cuenta)
+        internal static Data.Result<dynamic> Save(Data.Cuenta cuenta)
         {
             try
             {

@@ -7,7 +7,7 @@ namespace GTGatoFortunna.Bussines
 {
     public class Mes
     {
-        public static Data.Result Get()
+        public static Data.Result<dynamic> Get()
         {
             try
             {

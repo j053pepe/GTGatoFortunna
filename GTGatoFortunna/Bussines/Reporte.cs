@@ -7,7 +7,7 @@ namespace GTGatoFortunna.Bussines
 {
     public class Reporte
     {
-        public static Data.Result Get()
+        public static Data.Result<dynamic> Get()
         {
             try
             {

@@ -15,7 +15,12 @@ namespace GTGatoFortunna.Bussines
         static XDocument xmldoc;
         static string FilePath = "Data/DB.xml";
 
-        public static Data.Result NewItem(Data.Cuenta data)
+        /// <summary>
+        /// Agrega un elemento al archivo 
+        /// </summary>
+        /// <param name="data">Elemento de tipo Data.Cuenta</param>
+        /// <returns></returns>
+        public static Data.Result<dynamic> NewItem(Data.Cuenta data)
         {
             try
             {
@@ -38,7 +43,7 @@ namespace GTGatoFortunna.Bussines
             }
         }
 
-        internal static Data.Result Query(int cuentaId)
+        internal static Data.Result<dynamic> Query(int cuentaId)
         {
             try
             {
@@ -61,7 +66,7 @@ namespace GTGatoFortunna.Bussines
             }
         }
 
-        public static Data.Result UpdateItem(Data.Cuenta cuenta)
+        public static Data.Result<dynamic> UpdateItem(Data.Cuenta cuenta)
         {
             try
             {
@@ -91,7 +96,7 @@ namespace GTGatoFortunna.Bussines
                 return Result.GetResult(error, true, null);
             }
         }
-        public static Data.Result Exist()
+        public static Data.Result<dynamic> Exist()
         {
             try
             {
@@ -110,7 +115,7 @@ namespace GTGatoFortunna.Bussines
                 return Result.GetResult(error, true, null);
             }
         }
-        public static Data.Result Query()
+        public static Data.Result<dynamic> Query()
         {
             try
             {

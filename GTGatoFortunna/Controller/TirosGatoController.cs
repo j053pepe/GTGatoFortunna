@@ -29,7 +29,7 @@ namespace GTGatoFortunna.Controller
         {
             cuenta.MesGato.LastOrDefault().FechaCreacion = DateTime.Now;
             
-            Data.Result result = Bussines.TirosGato.Save(cuenta);
+            Data.Result<null> result = Bussines.TirosGato.Save(cuenta);
             if (result.Status)
             {
                 result.Resultado = Bussines.Cuenta.GetById(cuenta.CuentaId).Resultado;

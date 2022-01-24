@@ -7,7 +7,12 @@ namespace GTGatoFortunna.Bussines
 {
     public class Cuenta
     {
-        public static Data.Result Add(Data.Cuenta cuenta)
+        /// <summary>
+        /// Añade un nuevo elemento de tipo Data.Cuenta
+        /// </summary>
+        /// <param name="cuenta"></param>
+        /// <returns>Regresa un tipo Data.Result</returns>
+        public static Data.Result<dynamic> Add(Data.Cuenta cuenta)
         {
             try
             {
@@ -19,7 +24,7 @@ namespace GTGatoFortunna.Bussines
             }
         }
 
-        internal static Data.Result Get()
+        internal static Data.Result<dynamic> Get()
         {
             try
             {
@@ -31,7 +36,7 @@ namespace GTGatoFortunna.Bussines
             }
         }
 
-        internal static Data.Result GetById(int CuentaId)
+        internal static Data.Result<dynamic> GetById(int CuentaId)
         {
             try
             {
