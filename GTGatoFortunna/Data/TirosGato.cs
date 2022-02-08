@@ -12,7 +12,7 @@ namespace GTGatoFortunna.Data
         public int SubTotal { get; set; }
     }
 
-    public enum ConfigGato
+    public enum ConfigGatoEnum
     {
         PrimerTiro = 20,
         SegundoTiro = 30,
@@ -22,5 +22,12 @@ namespace GTGatoFortunna.Data
         SextoTiro = 330,
         SeptimoTiro = 500,
         OctavoTiro = 660
+    }
+
+    public class ConfigGato
+    {
+        public string Nombre { get; set; }
+        public int Numero { get; set; }
+        public int BaseTiro { get; set; }
     }
 }

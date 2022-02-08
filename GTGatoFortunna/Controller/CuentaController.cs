@@ -41,11 +41,11 @@ namespace GTGatoFortunna.Controller
         public IActionResult Get()
         {
             var result = Bussines.Cuenta.Get();
-            if (result.Status)
+            if (result.Item1.Status)
             {
-                return Ok(result);
+                return Ok(result.Item1);
             }
-            else { return BadRequest(result); }
+            else { return BadRequest(result.Item2); }
         }
     }
 }

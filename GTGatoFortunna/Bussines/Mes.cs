@@ -7,20 +7,20 @@ namespace GTGatoFortunna.Bussines
 {
     public class Mes
     {
-        public static Data.Result<dynamic> Get()
+        public static (Data.Result<List<Data.Mes>>, Data.Result<Data.LogAction>) Get()
         {
             try
             {
-                var Meses = Enum.GetValues(typeof(Data.Mes))
-                    .Cast<Data.Mes>()
-                    .Select(M => new { Nombre = M.ToString(), MesId = (int)M })
+                var Meses = Enum.GetValues(typeof(Data.EnumMes))
+                    .Cast<Data.EnumMes>()
+                    .Select(M => new Data.Mes { Nombre = M.ToString(), MesId = (int)M })
                     .ToList();
 
                 return Result.GetResult(new { Message = "ConsultaExitosa" }, false, Meses);
             }
             catch (Exception error)
             {
-                return Bussines.Result.GetResult(error, true, null);
+                return Result.GetResult(error, true, new List<Data.Mes>() { });
             }
         }
     }

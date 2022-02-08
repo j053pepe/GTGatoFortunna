@@ -7,13 +7,13 @@ namespace GTGatoFortunna.Bussines
 {
     public class TirosGato
     {
-        public static Data.Result<dynamic> GetConfig()
+        public static (Data.Result<List<Data.ConfigGato>>, Data.Result<Data.LogAction>) GetConfig()
         {
             try
             {
-                var ConfigGato = Enum.GetValues(typeof(Data.ConfigGato))
-                    .Cast<Data.ConfigGato>()
-                    .Select(M => new
+                var ConfigGato = Enum.GetValues(typeof(Data.ConfigGatoEnum))
+                    .Cast<Data.ConfigGatoEnum>()
+                    .Select(M => new Data.ConfigGato
                     {
                         Nombre = (int)M == 20 ? "Primer Tiro" :
                                 (int)M == 30 ? "Segundo Tiro" :
@@ -37,11 +37,11 @@ namespace GTGatoFortunna.Bussines
             }
             catch (Exception error)
             {
-                return Bussines.Result.GetResult(error, true, null);
+                return Bussines.Result.GetResult(error, true, new List<Data.ConfigGato>() { });
             }
         }
 
-        internal static Data.Result<dynamic> Save(Data.Cuenta cuenta)
+        internal static Data.Result<Data.LogAction> Save(Data.Cuenta cuenta)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace GTGatoFortunna.Bussines
             }
             catch (Exception error)
             {
-                return Bussines.Result.GetResult(error, true, null);
+                return Bussines.Result.GetResult(error, true, new Data.LogAction { });
             }
         }
     }

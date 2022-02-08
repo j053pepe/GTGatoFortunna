@@ -12,7 +12,7 @@ namespace GTGatoFortunna.Bussines
         /// </summary>
         /// <param name="cuenta"></param>
         /// <returns>Regresa un tipo Data.Result</returns>
-        public static Data.Result<dynamic> Add(Data.Cuenta cuenta)
+        public static Data.Result<Data.LogAction> Add(Data.Cuenta cuenta)
         {
             try
             {
@@ -20,11 +20,15 @@ namespace GTGatoFortunna.Bussines
             }
             catch (Exception error)
             {
-                return Bussines.Result.GetResult(error, true, null);
+                return Bussines.Result.GetResult(error, true, new Data.LogAction
+                {
+                    Resultado=$"Error al agregar el nuevo elemento",
+                    Tabla="Cuenta"
+                });
             }
         }
 
-        internal static Data.Result<dynamic> Get()
+        internal static (Data.Result<List<Data.Cuenta>>, Data.Result<Data.LogAction>) Get()
         {
             try
             {
@@ -32,11 +36,11 @@ namespace GTGatoFortunna.Bussines
             }
             catch (Exception error)
             {
-                return Bussines.Result.GetResult(error, true, null);
+                return Bussines.Result.GetResult(error, true, new List<Data.Cuenta>() { });
             }
         }
 
-        internal static Data.Result<dynamic> GetById(int CuentaId)
+        internal static (Data.Result<Data.Cuenta>, Data.Result<Data.LogAction>) GetById(int CuentaId)
         {
             try
             {
@@ -44,7 +48,7 @@ namespace GTGatoFortunna.Bussines
             }
             catch (Exception error)
             {
-                return Bussines.Result.GetResult(error, true, null);
+                return Bussines.Result.GetResult(error, true, new Data.Cuenta { });
             }
         }
     }

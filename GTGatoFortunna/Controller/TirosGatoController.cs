@@ -16,24 +16,28 @@ namespace GTGatoFortunna.Controller
         [HttpGet]
         public IActionResult Get()
         {
+
             var result = Bussines.TirosGato.GetConfig();
-            if (result.Status)
+            if (result.Item1.Status)
             {
-                return Ok(result);
+                return Ok(result.Item1);
             }
-            else { return BadRequest(result); }
+            else { return BadRequest(result.Item2); }
         }
 
         [HttpPut]
         public IActionResult NuevoGatoFortuna(Data.Cuenta cuenta)
         {
             cuenta.MesGato.LastOrDefault().FechaCreacion = DateTime.Now;
-            
-            Data.Result<null> result = Bussines.TirosGato.Save(cuenta);
+
+            Data.Result<Data.LogAction> result = Bussines.TirosGato.Save(cuenta);
             if (result.Status)
             {
-                result.Resultado = Bussines.Cuenta.GetById(cuenta.CuentaId).Resultado;
-                return Ok(result);
+                return Ok(new
+                {
+                    result.Message,
+                    Resultado = Bussines.Cuenta.GetById(cuenta.CuentaId).Item1.Resultado
+                });
             }
             else { return BadRequest(result); }
         }

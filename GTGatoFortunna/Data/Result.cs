@@ -13,4 +13,11 @@ namespace GTGatoFortunna.Data
         public string InnerExeption { get; set; }
         public T Resultado { get; set; }
     }
+
+    public class LogAction
+    {
+        public string Tabla { get; set; }
+        public string Resultado { get; set; }
+    }
+
 }

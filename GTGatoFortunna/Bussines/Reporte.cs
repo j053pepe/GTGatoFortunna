@@ -7,7 +7,7 @@ namespace GTGatoFortunna.Bussines
 {
     public class Reporte
     {
-        public static Data.Result<dynamic> Get()
+        public static (Data.Result<List<Data.Cuenta>>,Data.Result<Data.LogAction>) Get()
         {
             try
             {
@@ -15,7 +15,7 @@ namespace GTGatoFortunna.Bussines
             }
             catch (Exception error)
             {
-                return Bussines.Result.GetResult(error, true, null);
+                return Result.GetResult(error, true, new List<Data.Cuenta>() { });
             }
         }
     }
