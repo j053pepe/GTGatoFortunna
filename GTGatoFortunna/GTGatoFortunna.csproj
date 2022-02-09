@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <None Update="Data\DB.xml">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

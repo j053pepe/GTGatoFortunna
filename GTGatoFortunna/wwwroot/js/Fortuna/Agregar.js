@@ -42,6 +42,7 @@
             fortunaFn.PintarTabla(datalog.MesGato);
         },
         PintarTabla(Registros) {
+            $("#tblTiros > tbody").html("");
             //Tabla            
             var tabla = '<tbody>';
             $(Registros).each(function () {
