@@ -16,7 +16,7 @@ namespace GTGatoFortunna.Controller
         [HttpPut]
         public IActionResult New([FromForm] IFormFile file, [FromForm] string ItemCuenta)
         {
-            Data.Cuenta Cuenta =  JsonSerializer.Deserialize<Data.Cuenta>(ItemCuenta);
+            Data.Cuenta Cuenta = JsonSerializer.Deserialize<Data.Cuenta>(ItemCuenta);
 
             if (file.Length > 0)
             {
@@ -40,7 +40,8 @@ namespace GTGatoFortunna.Controller
         [HttpGet]
         public IActionResult Get()
         {
-            var result = Bussines.Cuenta.Get();
+            (Data.Result<List<Data.Cuenta>>, Data.Result<Data.LogAction>) result = Bussines.Cuenta.Get();
+
             if (result.Item1.Status)
             {
                 return Ok(result.Item1);

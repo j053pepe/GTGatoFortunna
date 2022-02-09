@@ -9,50 +9,50 @@
       <GatoFortuna>
         <Id>2</Id>
         <Año>2021</Año>
-        <MesId>3</MesId>
-        <FechaCreacion>2022-01-11T02:12:42.1845045-06:00</FechaCreacion>
-        <InvocacionesBase>440</InvocacionesBase>
-        <InvocacionesResultado>630</InvocacionesResultado>
+        <MesId>6</MesId>
+        <FechaCreacion>2022-02-09T01:02:24.5069285-06:00</FechaCreacion>
+        <InvocacionesBase>1066</InvocacionesBase>
+        <InvocacionesResultado>1270</InvocacionesResultado>
         <TirosGato>
           <TirosGato>
             <Requerido>20</Requerido>
             <Obtenido>2</Obtenido>
-            <SubTotal>442</SubTotal>
+            <SubTotal>1068</SubTotal>
           </TirosGato>
           <TirosGato>
             <Requerido>30</Requerido>
-            <Obtenido>6</Obtenido>
-            <SubTotal>448</SubTotal>
+            <Obtenido>5</Obtenido>
+            <SubTotal>1073</SubTotal>
           </TirosGato>
           <TirosGato>
             <Requerido>65</Requerido>
-            <Obtenido>7</Obtenido>
-            <SubTotal>455</SubTotal>
+            <Obtenido>6</Obtenido>
+            <SubTotal>1079</SubTotal>
           </TirosGato>
           <TirosGato>
             <Requerido>150</Requerido>
             <Obtenido>30</Obtenido>
-            <SubTotal>485</SubTotal>
+            <SubTotal>1109</SubTotal>
           </TirosGato>
           <TirosGato>
             <Requerido>240</Requerido>
-            <Obtenido>10</Obtenido>
-            <SubTotal>495</SubTotal>
+            <Obtenido>12</Obtenido>
+            <SubTotal>1121</SubTotal>
           </TirosGato>
           <TirosGato>
             <Requerido>330</Requerido>
-            <Obtenido>44</Obtenido>
-            <SubTotal>539</SubTotal>
+            <Obtenido>34</Obtenido>
+            <SubTotal>1155</SubTotal>
           </TirosGato>
           <TirosGato>
             <Requerido>500</Requerido>
-            <Obtenido>22</Obtenido>
-            <SubTotal>561</SubTotal>
+            <Obtenido>55</Obtenido>
+            <SubTotal>1210</SubTotal>
           </TirosGato>
           <TirosGato>
             <Requerido>660</Requerido>
-            <Obtenido>69</Obtenido>
-            <SubTotal>630</SubTotal>
+            <Obtenido>60</Obtenido>
+            <SubTotal>1270</SubTotal>
           </TirosGato>
         </TirosGato>
       </GatoFortuna>

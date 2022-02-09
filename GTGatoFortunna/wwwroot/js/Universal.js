@@ -1,10 +1,12 @@
-﻿var UniversalFn = {
+﻿var hostName = window.location.origin + window.location.pathname;
+
+var UniversalFn = {
     Api(Controller, Accion, Data) {
         var $def = $.Deferred();
         $.ajax({
             cache: false,
             type: Accion,
-            url: '/Api/' + Controller,
+            url: hostName + 'Api/' + Controller,
             data: JSON.stringify(Data),
             contentType: "application/json",
             dataType: "json",
@@ -21,7 +23,7 @@
         $.ajax({
             cache: false,
             type: Accion,
-            url: '/Api/' + Controller,
+            url: hostName + 'Api/' + Controller,
             data: form,
             enctype: 'multipart/form-data',
             processData: false,  // tell jQuery not to process the data
@@ -55,23 +57,23 @@
         console.log(errorThrown);
     },
     Menu: [{
-        Pagina: "/Views/Cuenta/Administrar.html",
-        JS: "/js/Cuenta/Administrar.js",
+        Pagina: hostName + "Views/Cuenta/Administrar.html",
+        JS: hostName + "js/Cuenta/Administrar.js",
         Id: "#1"
     },
     {
-        Pagina: "/Views/Fortuna/Agregar.html",
-        JS: "/js/Fortuna/Agregar.js",
+        Pagina: hostName + "Views/Fortuna/Agregar.html",
+        JS: hostName + "js/Fortuna/Agregar.js",
         Id: "#2"
     },
     {
-        Pagina: "/Views/Reportes/Consulta.html",
-        JS: "/js/Reportes/Consulta.js",
+        Pagina: hostName + "Views/Reportes/Consulta.html",
+        JS: hostName + "js/Reportes/Consulta.js",
         Id: "#3"
     },
     {
-        Pagina: "/index.html",
-        JS: "/index.js",
+        Pagina: "index.html",
+        JS: "index.js",
         Id: "0"
     }]
 };

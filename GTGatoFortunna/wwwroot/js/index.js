@@ -8,11 +8,12 @@
             var href = window.location.hash;
             indexFn.ShowHTML(href);
         },
-        ClickMenu() {
+        ClickMenu() {            
             var href = event.currentTarget.getAttribute('href');
             indexFn.ShowHTML(href);
         },
         ShowHTML(href) {
+            indexFn.ShowButtonActive($('a[href="' + href + '"'));
             var item = {};
 
             if (href !== "#" && href !== "") {
@@ -29,6 +30,16 @@
                 $('#container').html("");
                 $('#container').hide();
             }
+        },
+        ShowButtonActive(button) {
+            $('#navMenu a').each(function (index, item) {
+                $(item).addClass('w3-hover-black').removeClass('w3-black');
+            });
+            $('#myNavbar a').each(function (index, item) {
+                $(item).addClass('w3-hover-black').removeClass('w3-black');
+            });
+
+            $(button).removeClass('w3-hover-black').addClass('w3-black');
         }
     };
 
