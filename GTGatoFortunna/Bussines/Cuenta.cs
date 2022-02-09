@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GTGatoFortunna.Data;
+using GTGatoFortunna.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,17 +12,17 @@ namespace GTGatoFortunna.Bussines
         /// <summary>
         /// Añade un nuevo elemento de tipo Data.Cuenta
         /// </summary>
-        /// <param name="cuenta"></param>
-        /// <returns>Regresa un tipo Data.Result</returns>
-        public static Data.Result<Data.LogAction> Add(Data.Cuenta cuenta)
+        /// <param name="NewCuenta"></param>
+        /// <returns>Regresa un tipo Result</returns>
+        public static Result<LogAction> Add(Models.Cuenta NewCuenta)
         {
             try
             {
-                return FileXML.NewItem(cuenta);
+                return FileXML.NewItem(NewCuenta);
             }
             catch (Exception error)
             {
-                return Bussines.Result.GetResult(error, true, new Data.LogAction
+                return Bussines.Result.GetResult(error, true, new LogAction
                 {
                     Resultado=$"Error al agregar el nuevo elemento",
                     Tabla="Cuenta"
@@ -28,7 +30,7 @@ namespace GTGatoFortunna.Bussines
             }
         }
 
-        internal static (Data.Result<List<Data.Cuenta>>, Data.Result<Data.LogAction>) Get()
+        internal static (Result<List<Models.Cuenta>>, Result<LogAction>) Get()
         {
             try
             {
@@ -36,11 +38,11 @@ namespace GTGatoFortunna.Bussines
             }
             catch (Exception error)
             {
-                return Bussines.Result.GetResult(error, true, new List<Data.Cuenta>() { });
+                return Result.GetResult(error, true, new List<Models.Cuenta>() { });
             }
         }
 
-        internal static (Data.Result<Data.Cuenta>, Data.Result<Data.LogAction>) GetById(int CuentaId)
+        internal static (Result<Models.Cuenta>, Result<LogAction>) GetById(int CuentaId)
         {
             try
             {
@@ -48,7 +50,7 @@ namespace GTGatoFortunna.Bussines
             }
             catch (Exception error)
             {
-                return Bussines.Result.GetResult(error, true, new Data.Cuenta { });
+                return Result.GetResult(error, true, new Models.Cuenta { });
             }
         }
     }

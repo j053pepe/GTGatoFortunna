@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GTGatoFortunna.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,13 +8,13 @@ namespace GTGatoFortunna.Bussines
 {
     public class TirosGato
     {
-        public static (Data.Result<List<Data.ConfigGato>>, Data.Result<Data.LogAction>) GetConfig()
+        public static (Models.Result<List<Models.ConfigGato>>, Models.Result<Models.LogAction>) GetConfig()
         {
             try
             {
-                var ConfigGato = Enum.GetValues(typeof(Data.ConfigGatoEnum))
-                    .Cast<Data.ConfigGatoEnum>()
-                    .Select(M => new Data.ConfigGato
+                var ConfigGato = Enum.GetValues(typeof(Models.Enum.ConfigGato))
+                    .Cast<Models.Enum.ConfigGato>()
+                    .Select(M => new Models.ConfigGato
                     {
                         Nombre = (int)M == 20 ? "Primer Tiro" :
                                 (int)M == 30 ? "Segundo Tiro" :
@@ -37,19 +38,19 @@ namespace GTGatoFortunna.Bussines
             }
             catch (Exception error)
             {
-                return Bussines.Result.GetResult(error, true, new List<Data.ConfigGato>() { });
+                return Bussines.Result.GetResult(error, true, new List<Models.ConfigGato>() { });
             }
         }
 
-        internal static Data.Result<Data.LogAction> Save(Data.Cuenta cuenta)
+        internal static Models.Result<Models.LogAction> Save(Models.Cuenta cuenta)
         {
             try
             {
-                return Bussines.FileXML.UpdateItem(cuenta);
+                return FileXML.InsertNewCat(cuenta);
             }
             catch (Exception error)
             {
-                return Bussines.Result.GetResult(error, true, new Data.LogAction { });
+                return Bussines.Result.GetResult(error, true, new Models.LogAction { });
             }
         }
     }

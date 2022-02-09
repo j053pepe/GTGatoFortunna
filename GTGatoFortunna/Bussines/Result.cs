@@ -1,4 +1,5 @@
-﻿using GTGatoFortunna.Data;
+﻿using GTGatoFortunna.Bussines.Extensions;
+using GTGatoFortunna.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +9,12 @@ namespace GTGatoFortunna.Bussines
 {
     public class Result : TypeResult
     {
-        public static Data.Result<Data.LogAction> GetResult(dynamic data, bool IsError, Data.LogAction result)
+        public static Result<LogAction> GetResult(dynamic data, bool IsError, LogAction result)
         {
             if (IsError)
             {
                 var dataExp = data as Exception;
-                return new Data.Result<Data.LogAction>
+                return new Result<LogAction>
                 {
                     ErrorLine = dataExp?.StackTrace ?? "",
                     Message = dataExp?.Message ?? "",
@@ -23,7 +24,7 @@ namespace GTGatoFortunna.Bussines
             }
             else
             {
-                return new Data.Result<Data.LogAction>
+                return new Result<LogAction>
                 {
                     Message = (string)data?.Message ?? "",
                     Status = true,
@@ -32,12 +33,12 @@ namespace GTGatoFortunna.Bussines
             }
         }
 
-        internal static (Result<List<Data.ConfigGato>>, Result<LogAction>) GetResult(dynamic data, bool IsError, List<Data.ConfigGato> result)
+        internal static (Result<List<ConfigGato>>, Result<LogAction>) GetResult(dynamic data, bool IsError, List<ConfigGato> result)
         {
             if (IsError)
             {
                 var dataExp = data as Exception;
-                Log = new Data.Result<Data.LogAction>
+                Log = new Result<LogAction>
                 {
                     ErrorLine = dataExp?.StackTrace ?? "",
                     Message = dataExp?.Message ?? "",
@@ -47,7 +48,7 @@ namespace GTGatoFortunna.Bussines
             }
             else
             {
-                ConfigGato = new Data.Result<List<Data.ConfigGato>>
+                ConfigGato = new Result<List<ConfigGato>>
                 {
                     Message = (string)data?.Message ?? "",
                     Status = true,
@@ -70,12 +71,12 @@ namespace GTGatoFortunna.Bussines
         /// <item><see cref="Tuple{T1,T2}.Item2"/>: Log de error.</item>
         /// </list>
         /// </returns>
-        public static (Data.Result<List<Data.Cuenta>>, Data.Result<Data.LogAction>) GetResult(dynamic data, bool IsError, List<Data.Cuenta> result)
+        public static (Result<List<Models.Cuenta>>, Result<LogAction>) GetResult(dynamic data, bool IsError, List<Models.Cuenta> result)
         {
             if (IsError)
             {
                 var dataExp = data as Exception;
-                Log = new Data.Result<Data.LogAction>
+                Log = new Result<LogAction>
                 {
                     ErrorLine = dataExp?.StackTrace ?? "",
                     Message = dataExp?.Message ?? "",
@@ -85,7 +86,7 @@ namespace GTGatoFortunna.Bussines
             }
             else
             {
-                ResCuentas = new Data.Result<List<Data.Cuenta>>
+                ResCuentas = new Result<List<Models.Cuenta>>
                 {
                     Message = (string)data?.Message ?? "",
                     Status = true,
@@ -110,13 +111,13 @@ namespace GTGatoFortunna.Bussines
         /// <item><see cref="Tuple{T1,T2}.Item2"/>: Log de error.</item>
         /// </list>
         /// </returns>
-        public static (Data.Result<Data.Cuenta>, Data.Result<Data.LogAction>) GetResult(dynamic data, bool IsError, Data.Cuenta result)
+        public static (Result<Models.Cuenta>, Result<LogAction>) GetResult(dynamic data, bool IsError, Models.Cuenta result)
         {
 
             if (IsError)
             {
                 var dataExp = data as Exception;
-                Log = new Data.Result<Data.LogAction>
+                Log = new Result<LogAction>
                 {
                     ErrorLine = dataExp?.StackTrace ?? "",
                     Message = dataExp?.Message ?? "",
@@ -126,7 +127,7 @@ namespace GTGatoFortunna.Bussines
             }
             else
             {
-                ResCuenta = new Data.Result<Data.Cuenta>
+                ResCuenta = new Result<Models.Cuenta>
                 {
                     Message = (string)data?.Message ?? "",
                     Status = true,
@@ -150,13 +151,13 @@ namespace GTGatoFortunna.Bussines
         /// <item><see cref="Tuple{T1,T2}.Item2"/>: Log de error.</item>
         /// </list>
         /// </returns>
-        public static (Data.Result<List<Data.Mes>>, Data.Result<Data.LogAction>) GetResult(dynamic data, bool IsError, List<Data.Mes> result)
+        public static (Result<List<Models.Mes>>, Result<LogAction>) GetResult(dynamic data, bool IsError, List<Models.Mes> result)
         {
 
             if (IsError)
             {
                 var dataExp = data as Exception;
-                Log = new Data.Result<Data.LogAction>
+                Log = new Result<LogAction>
                 {
                     ErrorLine = dataExp?.StackTrace ?? "",
                     Message = dataExp?.Message ?? "",
@@ -166,7 +167,7 @@ namespace GTGatoFortunna.Bussines
             }
             else
             {
-                Meses = new Data.Result<List<Data.Mes>>
+                Meses = new Result<List<Models.Mes>>
                 {
                     Message = (string)data?.Message ?? "",
                     Status = true,

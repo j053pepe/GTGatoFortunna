@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GTGatoFortunna.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ namespace GTGatoFortunna.Bussines
 {
     public class Reporte
     {
-        public static (Data.Result<List<Data.Cuenta>>,Data.Result<Data.LogAction>) Get()
+        public static (Models.Result<List<Models.Cuenta>>,Models.Result<Models.LogAction>) Get()
         {
             try
             {
@@ -15,7 +16,7 @@ namespace GTGatoFortunna.Bussines
             }
             catch (Exception error)
             {
-                return Result.GetResult(error, true, new List<Data.Cuenta>() { });
+                return Result.GetResult(error, true, new List<Models.Cuenta>() { });
             }
         }
     }

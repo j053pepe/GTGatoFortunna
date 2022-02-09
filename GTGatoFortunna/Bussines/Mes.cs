@@ -7,20 +7,20 @@ namespace GTGatoFortunna.Bussines
 {
     public class Mes
     {
-        public static (Data.Result<List<Data.Mes>>, Data.Result<Data.LogAction>) Get()
+        public static (Models.Result<List<Models.Mes>>, Models.Result<Models.LogAction>) Get()
         {
             try
             {
-                var Meses = Enum.GetValues(typeof(Data.EnumMes))
-                    .Cast<Data.EnumMes>()
-                    .Select(M => new Data.Mes { Nombre = M.ToString(), MesId = (int)M })
+                var Meses = Enum.GetValues(typeof(Models.Enum.Mes))
+                    .Cast<Models.Enum.Mes>()
+                    .Select(M => new Models.Mes { Nombre = M.ToString(), MesId = (int)M })
                     .ToList();
 
-                return Result.GetResult(new { Message = "ConsultaExitosa" }, false, Meses);
+                return Result.GetResult(new { Message = "ConsultaExitosa" }, false,Meses);
             }
             catch (Exception error)
             {
-                return Result.GetResult(error, true, new List<Data.Mes>() { });
+                return Result.GetResult(error, true, new List<Models.Mes>() { });
             }
         }
     }

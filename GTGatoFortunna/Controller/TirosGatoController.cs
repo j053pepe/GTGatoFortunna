@@ -26,11 +26,11 @@ namespace GTGatoFortunna.Controller
         }
 
         [HttpPut]
-        public IActionResult NuevoGatoFortuna(Data.Cuenta cuenta)
+        public IActionResult NuevoGatoFortuna(Models.Cuenta cuenta)
         {
             cuenta.MesGato.LastOrDefault().FechaCreacion = DateTime.Now;
 
-            Data.Result<Data.LogAction> result = Bussines.TirosGato.Save(cuenta);
+            Models.Result<Models.LogAction> result = Bussines.TirosGato.Save(cuenta);
             if (result.Status)
             {
                 return Ok(new
