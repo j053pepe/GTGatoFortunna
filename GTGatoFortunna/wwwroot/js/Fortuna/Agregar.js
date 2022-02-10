@@ -1,7 +1,7 @@
 ﻿$(function () {
     var fortunaFn = {
         init() {
-            $('#mainGato').hide();            
+            $('#mainGato').hide();
             this.GetMeses();
             $('#ulListData').on('click', 'button', this.MostrarGato);
             $('#btnBack').on('click', this.Back);
@@ -51,7 +51,9 @@
                 tabla += '<td>' + $('#slcMes option[value="' + this.MesId + '"]').text() + '</td>';
                 tabla += '<td>' + moment(this.FechaCreacion).format('DD/MM/YYYY, h:mm:ss a') + '</td>';
                 tabla += '<td>' + this.InvocacionesBase + '</td>';
-                tabla += '<td>' + this.InvocacionesResultado + '</td></tr>';
+                tabla += '<td>' + this.InvocacionesResultado + '</td>'
+                tabla += '<td>' + (this.InvocacionesResultado - this.InvocacionesBase) + '</td>'
+                tabla += '</tr> ';
             });
 
             tabla += '</tbody>';
