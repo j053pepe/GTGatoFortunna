@@ -60,6 +60,9 @@
             $('#tblTiros').append(tabla);
         },
         ModalNuevo() {
+            var titulo = "Registro Gato =>" + $('#txtNombre').text() + "-" + $('#txtServer').text();
+            $('#header-title').text(titulo)
+
             $('#ModalGato').show();
             $('#frmGato')[0].reset();
             fortunaFn.GetConfig();
