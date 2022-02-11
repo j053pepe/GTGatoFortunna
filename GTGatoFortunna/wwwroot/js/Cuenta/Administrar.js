@@ -21,8 +21,7 @@
                     });
                 })
                 .fail(function (jqXHR, textStatus, errorThrown) {
-                    UniversalFn.LogError("Error en la consulta:", jqXHR, textStatus, errorThrown);
-                    alertify.error('Error al consultar.');
+                    UniversalFn.LogError("Error en la consulta:", jqXHR);
                 });
         },
         ModalNuevo() {
@@ -49,8 +48,7 @@
                     administrarFn.Get();
                 })
                 .fail(function (jqXHR, textStatus, errorThrown) {
-                    UniversalFn.LogError("Error al guardar el perfil:", jqXHR, textStatus, errorThrown);
-                    alertify.error('Error al guardar.');
+                    UniversalFn.LogError("Error al guardar el perfil:", jqXHR);
                 });
 
 

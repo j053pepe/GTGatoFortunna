@@ -17,8 +17,8 @@ namespace GTGatoFortunna.Bussines
                 return new Result<LogAction>
                 {
                     ErrorLine = dataExp?.StackTrace ?? "",
-                    Message = dataExp?.Message ?? "",
-                    InnerExeption = dataExp.InnerException?.Message ?? "",
+                    Message = dataExp is null ? data.Message: dataExp?.Message ?? "" ,
+                    InnerExeption = dataExp?.InnerException?.Message ?? "" ,
                     Status = false
                 };
             }
@@ -41,8 +41,8 @@ namespace GTGatoFortunna.Bussines
                 Log = new Result<LogAction>
                 {
                     ErrorLine = dataExp?.StackTrace ?? "",
-                    Message = dataExp?.Message ?? "",
-                    InnerExeption = dataExp.InnerException?.Message ?? "",
+                    Message = dataExp is null ? data.Message : dataExp?.Message ?? "",
+                    InnerExeption = dataExp?.InnerException?.Message ?? "",
                     Status = false
                 };
             }
@@ -79,7 +79,7 @@ namespace GTGatoFortunna.Bussines
                 Log = new Result<LogAction>
                 {
                     ErrorLine = dataExp?.StackTrace ?? "",
-                    Message = dataExp?.Message ?? "",
+                    Message = dataExp is null ? data.Message : dataExp?.Message ?? "",
                     InnerExeption = dataExp.InnerException?.Message ?? "",
                     Status = false
                 };
@@ -120,7 +120,7 @@ namespace GTGatoFortunna.Bussines
                 Log = new Result<LogAction>
                 {
                     ErrorLine = dataExp?.StackTrace ?? "",
-                    Message = dataExp?.Message ?? "",
+                    Message = dataExp is null ? data.Message : dataExp?.Message ?? "",
                     InnerExeption = dataExp.InnerException?.Message ?? "",
                     Status = false
                 };
@@ -160,7 +160,7 @@ namespace GTGatoFortunna.Bussines
                 Log = new Result<LogAction>
                 {
                     ErrorLine = dataExp?.StackTrace ?? "",
-                    Message = dataExp?.Message ?? "",
+                    Message = dataExp is null ? data.Message : dataExp?.Message ?? "",
                     InnerExeption = dataExp.InnerException?.Message ?? "",
                     Status = false
                 };

@@ -89,8 +89,7 @@
                     });
                 })
                 .fail(function (jqXHR, textStatus, errorThrown) {
-                    UniversalFn.LogError("Error en la consulta:", jqXHR, textStatus, errorThrown);
-                    alertify.error('Error al consultar.');
+                    UniversalFn.LogError("Error en la consulta:", jqXHR);
                 });
         },
         GetConfig() {
@@ -174,8 +173,7 @@
                     fortunaFn.PintarTabla(data.Resultado.MesGato);
                 })
                 .fail(function (jqXHR, textStatus, errorThrown) {
-                    UniversalFn.LogError("Error al guardar los tiros del gato:", jqXHR, textStatus, errorThrown);
-                    alertify.error('Error al guardar.');
+                    UniversalFn.LogError("Error al guardar los tiros del gato:", jqXHR);                                        
                     $('#ModalGato').show();
                 });
         },

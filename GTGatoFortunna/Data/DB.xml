@@ -276,6 +276,56 @@
           </TirosGato>
         </TirosGato>
       </GatoFortuna>
+      <GatoFortuna>
+        <Id>6</Id>
+        <Año>2021</Año>
+        <MesId>8</MesId>
+        <FechaCreacion>2022-02-11T00:04:20.3948202-06:00</FechaCreacion>
+        <InvocacionesBase>979</InvocacionesBase>
+        <InvocacionesResultado>1126</InvocacionesResultado>
+        <TirosGato>
+          <TirosGato>
+            <Requerido>20</Requerido>
+            <Obtenido>3</Obtenido>
+            <SubTotal>982</SubTotal>
+          </TirosGato>
+          <TirosGato>
+            <Requerido>30</Requerido>
+            <Obtenido>3</Obtenido>
+            <SubTotal>985</SubTotal>
+          </TirosGato>
+          <TirosGato>
+            <Requerido>65</Requerido>
+            <Obtenido>12</Obtenido>
+            <SubTotal>997</SubTotal>
+          </TirosGato>
+          <TirosGato>
+            <Requerido>150</Requerido>
+            <Obtenido>22</Obtenido>
+            <SubTotal>1019</SubTotal>
+          </TirosGato>
+          <TirosGato>
+            <Requerido>240</Requerido>
+            <Obtenido>12</Obtenido>
+            <SubTotal>1031</SubTotal>
+          </TirosGato>
+          <TirosGato>
+            <Requerido>330</Requerido>
+            <Obtenido>22</Obtenido>
+            <SubTotal>1053</SubTotal>
+          </TirosGato>
+          <TirosGato>
+            <Requerido>500</Requerido>
+            <Obtenido>29</Obtenido>
+            <SubTotal>1082</SubTotal>
+          </TirosGato>
+          <TirosGato>
+            <Requerido>660</Requerido>
+            <Obtenido>44</Obtenido>
+            <SubTotal>1126</SubTotal>
+          </TirosGato>
+        </TirosGato>
+      </GatoFortuna>
     </MesGato>
   </Cuenta>
   <Cuenta>

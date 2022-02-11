@@ -50,11 +50,9 @@ var UniversalFn = {
 
         return $def.promise();
     },
-    LogError(Mensaje, jqXHR, textStatus, errorThrown) {
-        console.log(Mensaje);
-        console.log(jqXHR);
-        console.log(textStatus);
-        console.log(errorThrown);
+    LogError(Mensaje, jqXHR) {
+        alertify.error(Mensaje);
+        alertify.error(jqXHR.responseJSON.Message);
     },
     Menu: [{
         Pagina: hostName + "Views/Cuenta/Administrar.html",
