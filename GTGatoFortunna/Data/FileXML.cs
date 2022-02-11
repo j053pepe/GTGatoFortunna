@@ -76,16 +76,24 @@ namespace GTGatoFortunna.Data
 
                 if (index != -1)
                 {
-                    lstDB[index].MesGato.Add(ItemGato.MesGato.FirstOrDefault());
-
-                    XmlSerializer xmlSerializer = new XmlSerializer(lstDB.GetType());
-
-                    using (StreamWriter writer = new StreamWriter(FilePath))
+                    if (!lstDB[index].MesGato.Exists(x => x.MesId == ItemGato.MesGato.FirstOrDefault().MesId && x.Año == ItemGato.MesGato.FirstOrDefault().Año))
                     {
-                        xmlSerializer.Serialize(writer, lstDB);
-                    }
+                        ItemGato.MesGato.FirstOrDefault().Id = lstDB[index].MesGato.Count() + 1;
+                        lstDB[index].MesGato.Add(ItemGato.MesGato.FirstOrDefault());
 
-                    return Bussines.Result.GetResult(new { Message = "Guardado correctamente" }, false, new LogAction { Resultado = $"Registro {ItemGato.CuentaId} - Actualizado", Tabla = "Cuenta - MesGato" });
+                        XmlSerializer xmlSerializer = new XmlSerializer(lstDB.GetType());
+
+                        using (StreamWriter writer = new StreamWriter(FilePath))
+                        {
+                            xmlSerializer.Serialize(writer, lstDB);
+                        }
+
+                        return Bussines.Result.GetResult(new { Message = "Guardado correctamente" }, false, new LogAction { Resultado = $"Registro {ItemGato.CuentaId} - Actualizado", Tabla = "Cuenta - MesGato" });
+                    }
+                    else
+                    {
+                        return Bussines.Result.GetResult(new { Message = "El Año y mes ya existen, favor de modificarlos" }, true, new LogAction { });
+                    }
                 }
                 else
                 {

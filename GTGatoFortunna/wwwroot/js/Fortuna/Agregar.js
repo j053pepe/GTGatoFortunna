@@ -161,7 +161,6 @@
                 return false;
             }
 
-            item.Id = itemGeneral.MesGato.length + 1;
             item.Año = $('#txtAño').val();
             item.MesId = parseInt($('#slcMes').val());
             item.InvocacionesBase = $('#txtIniciales').val();
