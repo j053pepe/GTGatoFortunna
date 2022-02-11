@@ -60,11 +60,14 @@
             $('#tblTiros').append(tabla);
         },
         ModalNuevo() {
+            var mesid = new Date().getMonth() + 1;
+
             var titulo = "Registro Gato =>" + $('#txtNombre').text() + "-" + $('#txtServer').text();
             $('#header-title').text(titulo)
 
             $('#ModalGato').show();
             $('#frmGato')[0].reset();
+            $('#slcMes').val(mesid)
             fortunaFn.GetConfig();
         },
         Get() {
