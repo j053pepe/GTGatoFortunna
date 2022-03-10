@@ -7,16 +7,27 @@
         <ul class="w3-ul w3-xlarge" id="ulListData">
         </ul>
     </main>
-    <main id="mainGato">
+    <main id="mainGato" class="w3-container">
         <h2>Cuenta</h2>
         <img id="imgProfile" class="w3-bar-item w3-circle w3-hide-small" style="width:100px;height: 85px;">
         <div class="w3-bar-item">
             <span class="w3-large" id="txtNombre"> <br /></span>
             <span id="txtServer"></span>
         </div>
-        <div class="w3-container">
+        <div class="w3-bar-item">
             <h3>Registro de tiros de gato de la fortuna</h3>
-            <h3>Nuevo <button class="w3-button w3-blue w3-small" id="btnNuevo"> +</button></h3>
+            <div class="row">
+                <div class="column">
+                    <h3>Nuevo</h3>
+                    <button class="w3-button w3-blue w3-large" id="btnNuevo"> + </button>
+                </div>
+                <div class="column">
+                    <h3>Año</h3>
+                    <div class="custom-select" style="width:200px;">
+                        <select id="slcYear" ></select>
+                    </div>
+                </div>
+            </div>
             <table class="w3-table-all" id="tblTiros">
                 <thead>
                     <tr class="w3-deep-orange">
@@ -34,7 +45,7 @@
                 </thead>
             </table>
         </div>
-        <div class="w3-container">
+        <div class="w3-bar-item">
             <hr />
             <h3> &nbsp;<button class="w3-button w3-yellow  w3-small" id="btnBack"><</button>Regresar</h3>
         </div>

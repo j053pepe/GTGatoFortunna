@@ -8,6 +8,13 @@
             $('#btnNuevo').on('click', this.ModalNuevo);
             $('#txtIniciales').on('change', this.GemasIniciales);
             $('#frmGato').on('submit', this.Save);
+            $('#slcYear').on('change', this.ChangeYear);
+        },
+        ChangeYear() {
+            let datalog = $('#mainGato').data('Item');
+            var itemsfilter = $(this).val() != -1 ? datalog.MesGato.filter(x => x.Año == $(this).val()) : datalog.MesGato;
+
+            fortunaFn.PintarTabla(itemsfilter);
         },
         GetMeses() {
             var $dropdown = $("#slcMes");
@@ -19,6 +26,15 @@
                     });
                     fortunaFn.Get();
                 });
+        },
+        SetYear(lstYear) {
+            $("#slcYear").empty();
+            var $dropdown = $("#slcYear");
+            $(lstYear).each(function () {
+                $dropdown.append($("<option />").val(this.value).text(this.text));
+            });
+
+            ScriptCombo.init();
         },
         Back() {
             $('#mainLista').show();
@@ -40,6 +56,7 @@
             $('#txtServer').text('Servidor: ' + datalog.Servidor);
 
             fortunaFn.PintarTabla(datalog.MesGato);
+            fortunaFn.SetYear(datalog.Combo)
         },
         PintarTabla(Registros) {
             $("#tblTiros > tbody").html("");

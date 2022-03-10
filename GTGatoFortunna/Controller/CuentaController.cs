@@ -44,7 +44,18 @@ namespace GTGatoFortunna.Controller
 
             if (result.Item1.Status)
             {
-                return Ok(result.Item1);
+                var resultCuenta = result.Item1.Resultado.Select(item =>
+                new
+                {
+                    item.CuentaId,
+                    item.ImgProfile,
+                    item.MesGato,
+                    item.Nick,
+                    item.Servidor,
+                    Combo = Bussines.TirosGato.GetCombo(item.MesGato)
+                });
+
+                return Ok(new { Resultado = resultCuenta });
             }
             else { return BadRequest(result.Item2); }
         }

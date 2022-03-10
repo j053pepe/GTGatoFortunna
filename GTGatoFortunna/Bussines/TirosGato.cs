@@ -1,4 +1,5 @@
 ﻿using GTGatoFortunna.Data;
+using GTGatoFortunna.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,25 @@ namespace GTGatoFortunna.Bussines
             {
                 return Bussines.Result.GetResult(error, true, new List<Models.ConfigGato>() { });
             }
+        }
+
+        internal static List<Models.Combo> GetCombo(List<GatoFortuna> mesGato)
+        {
+            List<Models.Combo> lstCombo = new List<Combo>();
+            lstCombo.Add(new Combo { value = 0, text = "Selecciona un año" });
+            lstCombo.Add(new Combo { value = -1, text = "Todos los años" });
+
+            lstCombo.AddRange(
+            mesGato.Select(x => x.Año)
+                .Distinct()
+                .Select(x => new Combo
+                {
+                    text = $"Año {x}",
+                    value = x
+                })
+                .ToList());
+
+            return lstCombo;
         }
 
         internal static Models.Result<Models.LogAction> Save(Models.Cuenta cuenta)
